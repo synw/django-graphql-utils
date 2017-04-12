@@ -39,7 +39,8 @@ how to set up the backend schemas
 
 ### Client side querying
 
-A javascript function is available to run queries. Use `{% include "graphql_utils/methods.js" %}` then:
+A javascript function to run queries is available: it will automaticly add the token to the request. 
+Use `{% include "graphql_utils/methods.js" %}` then:
 
   ```javascript
 var q = 'query{mymodel(field1:"name"){field1,field2,field3}}';
