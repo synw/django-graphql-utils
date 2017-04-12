@@ -51,5 +51,5 @@ function action(data) {
 }
 
 runQuery(q, action, error, true);
-# the last parameter is to set the verbosity of the function, false by default
+// The last parameter is to set the verbosity of the function, false by default
   ```
