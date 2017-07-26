@@ -1,0 +1,44 @@
+body, h1 {
+	margin:0;
+	padding:0;
+}
+a, a:visited {
+	color:steelblue;
+}
+#header {
+	color:white;
+	background-color:steelblue;
+	padding:0.5em 0 0.5em 1em;
+}
+#content {
+	padding:1em;
+	width:100%;
+	text-align:center;
+}
+.flex {
+	display: flex;
+	justify-content: center !important;
+}
+.col {
+	width:70%;
+}
+.col-r {
+	width:30%;
+}
+.row {
+	width:100%;
+}
+.btn-query {
+	float:right;
+	margin:0.5em 1.5em 0.5em 0.5em;
+}
+.shyButton {
+	background-color:transparent;
+	border:1px solid grey;
+	color:steelblue;
+}
+.shyButton:hover {
+	background-color:steelblue;
+	border:1px solid grey;
+	color:white;
+}

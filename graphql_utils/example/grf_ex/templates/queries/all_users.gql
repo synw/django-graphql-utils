@@ -1,0 +1,17 @@
+{
+  allUsers(first:5) {
+    edges {
+      node {
+        username
+        email
+      }
+      cursor
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
