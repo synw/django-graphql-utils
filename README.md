@@ -7,8 +7,7 @@
 
 
   ```bash
-pip install graphene graphene_django django-filter
-pip install git+https://github.com/synw/django-graphql-utils.git
+pip install django-graphql_utils
   ```
   
 Installed apps:
