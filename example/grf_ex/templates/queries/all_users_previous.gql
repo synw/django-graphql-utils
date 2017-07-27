@@ -1,5 +1,5 @@
 {
-  allUsers(first:5, after:"{% verbatim %}{{startCursor}}{% endverbatim %}") {
+  allUsers(last:5, before:"{% verbatim %}{{endCursor}}{% endverbatim %}") {
     edges {
       node {
         username

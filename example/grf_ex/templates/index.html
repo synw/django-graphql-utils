@@ -16,27 +16,27 @@
 		<h1>Graphql example</h1>
 	</div>
 	<div id="content">
-		<div class="flex">
+		<div class="flex" v-if="show !== undefined">
 			<div class="col">
-				<h3 v-if="show !== undefined">Query</h3>
+				<h3>Query</h3>
 				{% include "queries/index.html" %}
 			</div>
 			<div class="col-r">
-				<h3 v-if="show !== undefined">Results</h3>
+				<h3>Results</h3>
 				<div v-for="user in users" style="padding-top:1em;">
 					<div class="button stack">
 						<span v-html="user.username"></span> :
 						<span v-html="user.email"></span>
 					</div>
 				</div>
-				<div style="margin-top:1em" v-if="show !== undefined">
+				<div style="margin-top:1em">
 					<button class="shyButton" style="float:right" v-on:click="goNextPage" v-if="nextPage === true">Next</button>
-					<button class="shyButton" style="float:left" v-if="previousPage === true">Previous</button>
+					<button class="shyButton" style="float:left" v-on:click="goPreviousPage" v-if="previousPage === true">Previous</button>
 				</div>
 			</div>
 			<div class="row">
-				<h3 v-if="show !== undefined">Raw data</h3>
-				<pre  v-if="show !== undefined"v-html="rawData"></pre>
+				<h3>Raw data</h3>
+				<pre v-html="rawData"></pre>
 			</div>
 		</div>
 	</div>
