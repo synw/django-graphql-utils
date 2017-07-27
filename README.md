@@ -54,3 +54,18 @@ function action(data) {
 runQuery(q, action, error, true);
 // The last parameter is to set the verbosity of the function, false by default
   ```
+
+### Graphql app example
+
+An example implementation using the `User` model is available. To install go into the destination directory and:
+
+   ```bash
+   git clone https://github.com/synw/django-graphql-utils
+   cp -R django-graphql-utils/example/grf_ex .
+   virtualenv -p python3 .
+   source bin/activate
+   pip install -r django-graphql-utils/example/requirements.txt
+   cd grf_ex
+   python3 manage.py migrate
+   python3 manage.py runserver
+   ```
