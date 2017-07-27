@@ -3,6 +3,9 @@
 - Protect your endpoint with a Django csrf token
 - Ready to use javascript function to run queries client side
 
+An [example](#graphql-app-example) of a graphql implementation is available. It covers how to query on lists of objects and
+single objects, using pagination.
+
 ### Install
 
 
@@ -57,7 +60,7 @@ runQuery(q, action, error, true);
 
 ### Graphql app example
 
-An example implementation using the `User` model is available. To install go into the destination directory and:
+This example uses the `User` model and a Vue.js frontend. To install go into the destination directory and:
 
    ```bash
    git clone https://github.com/synw/django-graphql-utils
@@ -66,6 +69,7 @@ An example implementation using the `User` model is available. To install go int
    source bin/activate
    pip install -r django-graphql-utils/example/requirements.txt
    cd grf_ex
-   python3 manage.py migrate
    python3 manage.py runserver
    ```
+   
+ Note: the database is populated with fake data
