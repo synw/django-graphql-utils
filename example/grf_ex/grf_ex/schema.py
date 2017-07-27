@@ -13,9 +13,9 @@ class UserNode(DjangoObjectType):
                        "last_name", "date_joined", "last_login", "is_staff")
 
         filter_fields = {
-            'first_name': ['exact'],
-            'last_name': ['exact'],
-            'username': ['exact', 'icontains', 'istartswith'],
+            'username': ['exact'],
+            'first_name': ['exact', 'icontains', 'istartswith'],
+            'last_name': ['exact', 'icontains', 'istartswith'],
             'email': ['exact', 'icontains', 'istartswith']
         }
         interfaces = (relay.Node, )
@@ -23,8 +23,8 @@ class UserNode(DjangoObjectType):
 
 class UQuery(graphene.AbstractType):
     all_users = DjangoFilterConnectionField(UserNode)
-    users = graphene.Field(UserNode,
-                           username=graphene.String())
+    user = graphene.Field(UserNode,
+                          username=graphene.String())
 
     def resolve_all_users(self, args, context, info):
         return User.objects.filter(is_active=True)
@@ -32,7 +32,7 @@ class UQuery(graphene.AbstractType):
     def resolve_user(self, args, context, info):
         username = args.get('username')
         if username is not None:
-            return User.objects.filter(username=username)
+            return User.objects.get(username=username)
         return None
 
 

@@ -32,6 +32,12 @@ a, a:visited {
 	float:right;
 	margin:0.5em 1.5em 0.5em 0.5em;
 }
+.stack a, .stack a:hover {
+	color:white !important;
+}
+.label {
+	margin-top:0.4em;
+}
 .shyButton {
 	background-color:transparent;
 	border:1px solid grey;

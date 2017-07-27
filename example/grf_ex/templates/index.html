@@ -4,7 +4,6 @@
 <head>
 	<title>Graphql example</title>
     <script type="text/javascript" src="{% static 'js/vue.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/picnic.min.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 </head>
@@ -23,15 +22,34 @@
 			</div>
 			<div class="col-r">
 				<h3>Results</h3>
-				<div v-for="user in users" style="padding-top:1em;">
-					<div class="button stack">
-						<span v-html="user.username"></span> :
-						<span v-html="user.email"></span>
+				<div v-if="users!==[]">
+					<div v-for="u in users" style="padding-top:1em;">
+						<a href="#" v-on:click="getUser(u.username)">
+							<div class="button stack">
+								<span class="label success" style="float:right">View</span>
+								<span v-html="u.username"></span> :
+								<span v-html="u.email"></span>
+							</div>
+						</a>
+					</div>
+					<div style="margin-top:1em">
+						<button class="shyButton" style="float:right" v-on:click="goNextPage" v-if="nextPage === true">Next</button>
+						<button class="shyButton" style="float:left" v-on:click="goPreviousPage" v-if="previousPage === true">Previous</button>
 					</div>
 				</div>
-				<div style="margin-top:1em">
-					<button class="shyButton" style="float:right" v-on:click="goNextPage" v-if="nextPage === true">Next</button>
-					<button class="shyButton" style="float:left" v-on:click="goPreviousPage" v-if="previousPage === true">Previous</button>
+				<div v-if="show === 'userdetail'" style="text-align:left">
+					<div v-html="user.username"></div>
+					<div v-html="user.email"></div>
+					<div>
+						Joined at: <span v-html="user.date_joined"></span>
+					</div>
+					<div>
+						Last login: <span v-html="user.last_login"></span>
+					</div>
+					<div>
+						Is staff: <span v-html="user.is_staff"></span>
+					</div>
+					<button class="shyButton" style="margin-top:1em" v-on:click="getUsers()">Back</button>
 				</div>
 			</div>
 			<div class="row">

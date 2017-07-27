@@ -1,0 +1,9 @@
+{
+  user(username: "{% verbatim %}{{user.username}}{% endverbatim %}") {
+    username
+    email
+    dateJoined
+    lastLogin
+    isStaff
+  }
+}

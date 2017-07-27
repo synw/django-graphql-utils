@@ -1,3 +1,4 @@
-<pre v-if="show == 'allUsers'">{% include 'queries/all_users.gql' %}</pre>
-<pre v-if="show == 'nextPage'">{% include 'queries/all_users_next.gql' %}</pre>
-<pre v-if="show == 'previousPage'">{% include 'queries/all_users_previous.gql' %}</pre>
+<pre v-if="show === 'allUsers'">{% include 'queries/all_users.gql' %}</pre>
+<pre v-if="show === 'nextPage'">{% include 'queries/all_users_next.gql' %}</pre>
+<pre v-if="show === 'previousPage'">{% include 'queries/all_users_previous.gql' %}</pre>
+<pre v-if="show === 'userdetail'">{% include 'queries/user.gql' %}</pre>
