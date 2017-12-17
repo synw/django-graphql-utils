@@ -4,15 +4,15 @@ from setuptools import setup, find_packages
 version = __import__('graphql_utils').__version__
 
 setup(
-    name='django-graphql_utils',
+    name='django-graphql-utils',
     packages=find_packages(),
     include_package_data=True,
     version=version,
     description='Utilities to work with Graphql in Django ',
     author='synw',
     author_email='synwe@yahoo.com',
-    url='https://github.com/synw/django-graphql_utils',
-    download_url='https://github.com/synw/django-graphql_utils/releases/tag/' + version,
+    url='https://github.com/synw/django-graphql-utils',
+    download_url='https://github.com/synw/django-graphql-utils/releases/tag/' + version,
     keywords=['django', 'graphql'],
     classifiers=[
         'Development Status :: 3 - Alpha',
