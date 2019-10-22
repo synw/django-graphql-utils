@@ -3,7 +3,7 @@ django-filter==1.0.4
 django-filters==0.2.1
 django-graphql-utils==0.1.2
 django-seed==0.1.7
-djangorestframework==3.6.3
+djangorestframework==3.9.1
 Faker==0.7.18
 graphene==1.4.1
 graphene-django==1.3
